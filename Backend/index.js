@@ -14,6 +14,7 @@ import postRoutes from "./routes/posts.js"
 import { register } from './controllers/auth.js'
 import {createPost} from "./controllers/posts.js"
 import { verifyToken } from './middleware/auth.js'
+import User from './models/User.js'
 
 // configurations for middlewares
 
