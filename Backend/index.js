@@ -39,6 +39,13 @@ app.use('/assets', express.static(path.join(__dirname, 'public/assets')))
 
 // File Storage
 
+// const logHeaders = (req, res, next) => {
+//     console.log('Request Headers:', req.headers);
+//     next();
+// };
+// app.use(logHeaders)
+
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, "public/assets");

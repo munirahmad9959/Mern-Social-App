@@ -44,6 +44,7 @@ const Form = () => {
     const [pageType, setPageType] = useState("login")
     const { palette } = useTheme()
     const dispatch = useDispatch()
+    // The useDispatch hook is used to dispatch actions to the Redux store. It allows you to send actions, which are then processed by reducers to update the state. Basically to update states in the store.
     const navigate = useNavigate()
     const isNonMobile = useMediaQuery("(min-width: 600px)")
     const isLogin = pageType === "login"
@@ -75,11 +76,11 @@ const Form = () => {
         })
         const loggedIn = await loggedInResponse.json()
         onSubmitProps.resetForm()
-        console.log(`Logged in data is: ${loggedIn}`)
+        // console.log(`Logged in data is: ${JSON.stringify(loggedIn, null, 2)}`)
         if (loggedIn) {
             dispatch(setLogin({
                 user: loggedIn.user,
-                token: loggedIn.token
+                token: loggedIn.token,
             }))
             navigate("/home")
         }
